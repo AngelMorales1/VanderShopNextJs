@@ -1,11 +1,16 @@
 import Head from 'next/head';
+import { Template } from '../src/components/templates/template.component';
 import { HomePage } from '../src/views/home/home.component';
 
 function Home(){
     return(
         <>
-            <Head>Vander-Shop</Head>
-            <HomePage/>
+            <Head>
+                <title>Vander Shop</title>
+            </Head>
+            <Template>
+                <HomePage/>
+            </Template>
         </>      
     )
 }

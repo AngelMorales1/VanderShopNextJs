@@ -1,22 +1,23 @@
 import React from "react";
 import Link from 'next/link'
 import PropTypes from 'prop-types';
-import './button.styles.scss'
+import styles from './button.module.scss'
+import clsx from 'clsx'
 
 export const Button = ({onClick,color,children,link,margin,border})=>{
 
     const ButtonLink = ({children})=>{
         if (link) {
-            return (<Link  to={link}>{children}</Link >)
+            return (<Link href={link}>{children}</Link >)
         }else{
             return <>{children}</>
         }
     }
 
     return(
-        <ButtonLink >
+        <ButtonLink>
             <button
-            className={"button "+color}
+            className={clsx(styles.button, styles[color])}
             style={{margin: margin, border: border}}
             onClick={onClick}>
                 {children}

@@ -1,16 +1,15 @@
-import {React, useEffect,useState,useRef}  from "react";
-import { useParams } from "react-router-dom";
-import './catalogo.styles.scss'
+import { useEffect,useState,useRef}  from "react";
+import styles from './catalogo.module.scss'
 import {gsap} from "gsap";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import {Typography} from '../../components/atoms/typography/typography.component'
 import {data} from '../../assets/data/MOCK_DATA'
+import clsx from "clsx";
 
 
 export const Catalogo = () => {
-    const {categoria}= useParams()
 
     const [windowSize, setWindowSize] = useState(1920)
     const [dropDown,setDropDown] = useState(false)
@@ -26,7 +25,7 @@ export const Catalogo = () => {
             title: "Talle",
             values: ["L","M","S"]
         }]
-
+    /*
     useEffect(()=>{
         window.addEventListener('resize',()=>{
             setWindowSize(window.innerWidth)
@@ -43,20 +42,20 @@ export const Catalogo = () => {
         }
         setDropDown(!dropDown)
     }
-
+    */
     return(
-        <div className="container page">
+        <div className={clsx(styles.page,'container')}>
             <div className="title">
-                <Typography variant="h1">Todos los productos de: {categoria.toUpperCase()}</Typography>
+                <Typography variant="h1">Todos los productos de:</Typography>
             </div>
 
-            <div className="sidebar">
+            <div className={styles.sidebar}>
                 {windowSize>660?
-                    <div className="categorias">
+                    <div className={styles.categorias}>
                         {categories.map((category,idx)=>
-                            <div className="categoria" key={idx}>
+                            <div className={styles.categoria} key={idx}>
                                 <Typography variant="h3" className="title">{category.title}</Typography>
-                                <div className="tipos">
+                                <div className={styles.tipos}>
                                     {category.values.map((value,idx)=>
                                         <Typography variant="p" key={idx}>{value}</Typography>
                                     )}
@@ -64,16 +63,16 @@ export const Catalogo = () => {
                             </div>
                         )}
                     </div>:
-                    <div className="dropdown" >
-                        <div className="toggle" onClick={()=>dropDownToggle()}>
+                    <div className={styles.dropdown} >
+                        <div className={styles.toggle} onClick={()=>dropDownToggle()}>
                             <Typography variant="h3" >Categorias</Typography>
                             <FontAwesomeIcon icon={faChevronDown}/>   
                         </div>
-                        <div className="categorias" ref={dropdown} style={{display:"none",gridTemplateColumns:`repeat(3,1fr)`,gridTemplateRows:`repeat(${Math.round(categories.length/3)},1fr)`}}>
+                        <div className={styles.categorias} ref={dropdown} style={{display:"none",gridTemplateColumns:`repeat(3,1fr)`,gridTemplateRows:`repeat(${Math.round(categories.length/3)},1fr)`}}>
                             {categories.map((category,idx)=>
-                                <div className="categoria" key={idx}>
+                                <div className={styles.categoria} key={idx}>
                                     <Typography variant="h3">{category.title}</Typography>
-                                    <div className="tipos">
+                                    <div className={styles.tipos}>
                                         {category.values.map((value,idx)=>
                                             <Typography variant="p" key={idx}>{value}</Typography>
                                         )}
@@ -86,15 +85,15 @@ export const Catalogo = () => {
                 
             </div>
 
-            <div className="catalogo">
-                <div className="catalogo-grid">
+            <div className={styles.catalogo}>
+                <div className={styles.catalogoGrid}>
                     {data.map((item,idx)=>
-                        <div className="item" key={idx}>
+                        <div className={styles.item} key={idx}>
                             <img src={`/img/${item.img}`} alt="productos"/>
-                            <div className="title">
+                            <div className={styles.title}>
                                 {item.name.toUpperCase().slice(0,15)}
                             </div>
-                            <div className="description">
+                            <div className={styles.description}>
                                 {item.description}
                             </div>
                         </div>  

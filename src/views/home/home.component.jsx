@@ -1,15 +1,16 @@
-import {React, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Button } from "../../components/atoms/button/button.component";
-import './home.styles.scss'
+import styles from './home.module.scss'
+import clsx from 'clsx'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+/*import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
 //import { timeline } from "../../App";
-
+*/
 import { Typography } from "../../components/atoms/typography/typography.component";
 import {ProductTypeCard} from "../../components/molecules/productTypeCard/productTypeCard.component"
 import hombre from '../../assets/img/hombre.jpg';
@@ -28,42 +29,43 @@ export const HomePage = () => {
             timeline.from(boxRef.current, { x: "-300", opacity:"0"},"0.6")
                     .to(banner.current,{scale:1.1,duration:"2",repeat:"-1",yoyo:true})
         },[]);
-    */
+    
 
     SwiperCore.use([Navigation, Pagination]);
-
+    */
     return(
         <div>
-            <div className="banner" >
-                <div className="img"></div>
-                <div className="text">
-                    <div className="content">
+            <div className={styles.banner} >
+                <div className={styles.img}></div>
+                <div className={styles.text}>
+                    <div className={styles.content}>
                         <Typography variant="h1" color="white">RECONECTA CON TU ENERGIA</Typography>
                         <Typography variant="h3" color="white" >NUEVAS Zig Dynamarca</Typography>
                         <Button color="black" margin="10px 5px">COMPRA AHORA</Button>
                     </div>
                 </div>
             </div>
-            <div className="main container">
-                <div className="popular">
+            <div className={clsx(styles.main,`container`)}>
+                <div className={styles.popular}>
                     <Typography variant="h1" color="black">¿QUE ESTAS BUSCANDO?</Typography>
-                    <div className="btn-div">
+                    <div className={styles.btnDiv}>
                         <Button color="white" border="1px solid grey">INDUMENTARIA</Button>
                         <Button color="white" border="1px solid grey">CALZADO</Button>
                         <Button color="white" border="1px solid grey">ACCESORIOS</Button>
                     </div>
                 </div>
 
-                <div className="sexos-cat">
+                <div className={styles.sexosCat}>
                     <Typography variant="h1" color="black" >PARA QUIEN COMPRAS? </Typography>
-                    <div className="cat-sexos-div">
+                    <div className={styles.catSexosDiv}>
                         <ProductTypeCard image={hombre} imgPosition="50% 0" link="/catalogo/hombre">Nombre</ProductTypeCard>
                         <ProductTypeCard image={mujer} imgPosition="100% 0" link="/catalogo/mujer">Mujer</ProductTypeCard>
                         <ProductTypeCard image={ninos} imgPosition="100% 50%" link="/catalogo/ninos">Niños</ProductTypeCard>
                     </div>
                 </div>
-
-                <div className="novedades">
+                
+                {/*
+                <div className={styles.novedades}>
                     <Typography variant="h1">NOVEDADES</Typography>
                     <div className="novedades-slider">
                         <Swiper
@@ -86,15 +88,16 @@ export const HomePage = () => {
                                    </div>
                                 </SwiperSlide>
                             ))}
-                            <div className="navigation swiper-button-next">
+                            <div className={clsx(styles.navigation,' swiper-button-next')}>
                                 <FontAwesomeIcon icon={faLongArrowAltRight}/>
                             </div>
-                            <div className="navigation swiper-button-prev">
+                            <div className={clsx(styles.navigation,' swiper-button-prev`')}>
                                 <FontAwesomeIcon icon={faLongArrowAltLeft}/>
                             </div>
                         </Swiper>
                     </div>
                 </div>
+                */}
             </div>
         </div>
     )

@@ -1,14 +1,15 @@
 import React from "react"
 import Link from 'next/link'
 import PropTypes from 'prop-types';
-import './productTypeCard.styles.scss';
+import styles from './productTypeCard.module.scss';
+import clsx from "clsx";
 
 
 export const ProductTypeCard=({image,link,children,imgPosition})=>{
 
     const CardLink = ({children})=>{
         if (link) {
-            return (<Link to={link} style={{ textDecoration: 'none' }}>{children}</Link>)
+            return (<Link href={link} style={{ textDecoration: 'none' }}>{children}</Link>)
         }else{
             return <>{children}</>
         }
@@ -16,13 +17,13 @@ export const ProductTypeCard=({image,link,children,imgPosition})=>{
 
     return(
         <CardLink>
-            <div className="cat" 
+            <div className={clsx(styles.cat)} 
                 style={{
                     backgroundImage: `url(${image})`,
                     backgroundPosition: `${imgPosition}`
                     }}>
                     
-                <div className="content">
+                <div className={clsx(styles.content)}>
                     {children}
                 </div>
             </div>

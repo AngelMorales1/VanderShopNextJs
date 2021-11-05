@@ -32,16 +32,16 @@
         flex-direction: column;
         align-items: center;
         grid-gap: 30px;
-        .btn-div{
+        .btnDiv{
             display: flex;
             flex-direction: row;
             grid-gap: 60px;
         }
     }
 
-    .sexos-cat{
+    .sexosCat{
         text-align: flex-start;
-        .cat-sexos-div{
+        .catSexosDiv{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 15px;
@@ -51,9 +51,9 @@
     .novedades{
         margin: 60px 0 ;
         // items del slider
-        .swiper-slide{
+        .swiperSlide{
             padding: 2px;
-            .swiper-item{
+            .swiperItem{
                 width: 100%;
                 margin: 2px;
                 img{

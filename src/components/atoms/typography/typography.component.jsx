@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import '../../../styles/settings/typography.scss'
 
 export const Typography = ({variant,children,color,font})=>{
  /*
