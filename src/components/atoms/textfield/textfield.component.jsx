@@ -1,19 +1,18 @@
-import React from 'react';
-import'./textfield.styles.scss'
+import styles from './textfield.module.scss'
 import PropTypes from 'prop-types'
 
-export const TextField = ({placeholder,textarea,label,type,value,onSubmit}) => {
+export const TextField = ({placeholder,textarea,label,type,onSubmit}) => {
 
     const Text = ({value})=>{
       if(textarea){
-        return (<textarea placeholder={placeholder} value={value} className="input" onSubmit={onSubmit}/>)
+        return (<textarea placeholder={placeholder} value={value} className={styles.input} onSubmit={onSubmit}/>)
       }else{
-        return (<input type={type} placeholder={placeholder} value={value} className="input" onSubmit={onSubmit}/>)
+        return (<input type={type} placeholder={placeholder} value={value} className={styles.input} onSubmit={onSubmit}/>)
       }
     } 
 
     return(
-        <div className="textfield">
+        <div className={styles.textfield}>
           <label>{label}</label>
           <Text/>
         </div>

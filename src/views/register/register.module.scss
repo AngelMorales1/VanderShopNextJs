@@ -1,10 +1,10 @@
-.container-login{
+.containerRegister{
     height: 86vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    .login-grid{
-        border: 2px solid black;
+    .registerGrid{
+        border: 2px solid var(--color-black);
         border-radius: 5px;
         padding: 100px;
         display: grid;

@@ -54,7 +54,7 @@ export const Catalogo = () => {
                     <div className={styles.categorias}>
                         {categories.map((category,idx)=>
                             <div className={styles.categoria} key={idx}>
-                                <Typography variant="h3" className="title">{category.title}</Typography>
+                                <Typography variant="h2" className="title">{category.title}</Typography>
                                 <div className={styles.tipos}>
                                     {category.values.map((value,idx)=>
                                         <Typography variant="p" key={idx}>{value}</Typography>
@@ -89,12 +89,12 @@ export const Catalogo = () => {
                 <div className={styles.catalogoGrid}>
                     {data.map((item,idx)=>
                         <div className={styles.item} key={idx}>
-                            <img src={`/img/${item.img}`} alt="productos"/>
+                            <img src={`src/assets/img/${item.img}`} alt="productos"/>
                             <div className={styles.title}>
-                                {item.name.toUpperCase().slice(0,15)}
+                                <Typography variant="h4">{item.name.toUpperCase().slice(0,15)}</Typography>
                             </div>
                             <div className={styles.description}>
-                                {item.description}
+                                <Typography>{item.description}</Typography>
                             </div>
                         </div>  
                     )}

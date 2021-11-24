@@ -6,7 +6,7 @@ function CatalogoPage(){
     return(
         <>
             <Head>
-                <title>Catalogo</title>
+                <title>VanderShop</title>
             </Head>
             <Template>
                 <Catalogo/>

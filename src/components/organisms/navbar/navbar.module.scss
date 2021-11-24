@@ -4,18 +4,15 @@
     padding: 0 10%;
     display: flex;
     justify-content: space-between;
+    background: var(--color-white);
     .buttons{
         display: flex;
         flex-direction: row;
         align-items: center;
         z-index: 99;
         font-size: 35px;
-        color: black;
+        color: var(--color-black);
         text-decoration: none;
-        p{
-            padding-left: 5px;
-            font-size: 30px;
-        }
     }
     .inputs{
         display: flex;
@@ -25,7 +22,9 @@
             width: 140px;
             height: 32px;
             padding: 0 45px 0 5px;
-            border-bottom: 1px solid black;
+            background: var(--color-white);
+            font-weight: 900;
+            border-bottom: 1px solid var(--color-black);
             &:focus{
                 outline: none;
                 &::placeholder{
@@ -35,22 +34,22 @@
         }
         .search{
             font-size: 25px;
-            color: #050505b4;
+            color: var(--color-black);
             position: relative;
             right: 25px;
         }
         .shopping{
             font-size: 25px;
-            color: #050505b4;
+            color: var(--color-black);
         }
 
         .login{
             text-decoration: none;
-            color: #050505b4;
+            color: var(--color-black);
             display: flex;
             flex-direction: row;
             padding: 0 20px;
-            align-items: flex-end;
+            align-items: center;
             font-size: 22px;
             p{
                 margin: 0 5px;

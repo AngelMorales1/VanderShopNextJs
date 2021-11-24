@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { Typography } from "../src/components/atoms/typography/typography.component";
 
-const ErrorPage = () => {
+function ErrorPage(){
 
     const Router = useRouter()
 
@@ -13,7 +14,7 @@ const ErrorPage = () => {
 
     return ( 
         <div>
-            <h1>Error 404 page</h1>
+            <Typography variant="h1">Error 404 page</Typography>
         </div>
     );
 }

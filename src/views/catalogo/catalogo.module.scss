@@ -13,10 +13,11 @@
     .catalogo{
         grid-column-start: 3;
         grid-column-end: 5;
+        padding: 30px 0;
         .catalogoGrid{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 10px;
+            gap: 15px;
             .item{
                 .description, .title,img{
                     text-align: center;

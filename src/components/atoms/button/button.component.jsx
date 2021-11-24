@@ -1,4 +1,3 @@
-import React from "react";
 import Link from 'next/link'
 import PropTypes from 'prop-types';
 import styles from './button.module.scss'
@@ -35,7 +34,7 @@ Button.propTypes={
 }
 
 Button.defaultProps={
-    onClick: "",
+    onClick: ()=>{},
     color: "black",
     link: "",
     margin: "5px",

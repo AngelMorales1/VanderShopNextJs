@@ -36,7 +36,7 @@ export const HomePage = () => {
     return(
         <div>
             <div className={styles.banner} >
-                <div className={styles.img}></div>
+                <div className={styles.img}/>
                 <div className={styles.text}>
                     <div className={styles.content}>
                         <Typography variant="h1" color="white">RECONECTA CON TU ENERGIA</Typography>
@@ -47,7 +47,7 @@ export const HomePage = () => {
             </div>
             <div className={clsx(styles.main,`container`)}>
                 <div className={styles.popular}>
-                    <Typography variant="h1" color="black">¿QUE ESTAS BUSCANDO?</Typography>
+                    <Typography variant="h1">¿QUE ESTAS BUSCANDO?</Typography>
                     <div className={styles.btnDiv}>
                         <Button color="white" border="1px solid grey">INDUMENTARIA</Button>
                         <Button color="white" border="1px solid grey">CALZADO</Button>
@@ -56,7 +56,7 @@ export const HomePage = () => {
                 </div>
 
                 <div className={styles.sexosCat}>
-                    <Typography variant="h1" color="black" >PARA QUIEN COMPRAS? </Typography>
+                    <Typography variant="h1" >PARA QUIEN COMPRAS? </Typography>
                     <div className={styles.catSexosDiv}>
                         <ProductTypeCard image={hombre} imgPosition="50% 0" link="/catalogo/hombre">Nombre</ProductTypeCard>
                         <ProductTypeCard image={mujer} imgPosition="100% 0" link="/catalogo/mujer">Mujer</ProductTypeCard>

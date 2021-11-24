@@ -19,7 +19,7 @@ export const ProductTypeCard=({image,link,children,imgPosition})=>{
         <CardLink>
             <div className={clsx(styles.cat)} 
                 style={{
-                    backgroundImage: `url(${image})`,
+                    backgroundImage: `url(${image.value})`,
                     backgroundPosition: `${imgPosition}`
                     }}>
                     
@@ -35,11 +35,11 @@ export const ProductTypeCard=({image,link,children,imgPosition})=>{
 ProductTypeCard.propTypes={
     imgPosition: PropTypes.string,
     link: PropTypes.string,
-    image: PropTypes.string
+    image: PropTypes.any
 }
 
 ProductTypeCard.defaultProps={
     imgPosition: "0 0",
     link: "",
-    image: ""
+    image: "asda"
 }

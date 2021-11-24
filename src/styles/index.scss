@@ -7,9 +7,19 @@
   font-family: 'Gemunu Libre', sans-serif;
 }
 
-.container{
-  background: white;
-  padding: 0 10%;
+body{
+  background: var(--color-white);
 }
 
+.container{
+  background: var(--color-white);
+  padding: 30px 10%;
+}
+
+:root{
+  --color-black: #000;
+  --color-white: #fff;
+}
+
+@import './settings/typography.scss';
 @import './global/_Normalize';

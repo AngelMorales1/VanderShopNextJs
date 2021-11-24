@@ -41,6 +41,6 @@ Typography.propTypes={
 Typography.defaultProps={
     variant: "p",
     className: "",
-    color: "black",
+    color: "",
     font: ""
 }
