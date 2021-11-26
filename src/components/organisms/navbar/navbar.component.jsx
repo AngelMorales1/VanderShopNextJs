@@ -8,11 +8,11 @@ import { Typography } from '../../atoms/typography/typography.component';
 
 export const Navbar = ()=>{
     
-    const [themeIcon, setThemeIcon] = useState(false)
-    const {toggleTheme} = useStyleContext();
+    const [themeIcon, setThemeIcon] = useState(true)
+    const toggleTheme = useStyleContext();
 
     const changeCurrentTheme= ()=>{
-        console.log(toggleTheme)
+        toggleTheme(themeIcon)
         setThemeIcon(!themeIcon)
     }
 

@@ -3,11 +3,11 @@ import { darkTheme } from '../theme/darkTheme';
 import { lightTheme } from "../theme/lightTheme";
 import { changeTheme } from "../utils/changeTheme";
 
-export const StyleContext = createContext();
+const StyleContext = createContext();
 
 export const useStyleContext = ()=> useContext(StyleContext);
- 
-export const StyleProvider = ({children})=>{
+
+const StyleProvider = ({children})=>{
 
     const toggleTheme = ( toggle )=>{
         if(toggle){
@@ -24,3 +24,4 @@ export const StyleProvider = ({children})=>{
     )
 }
 
+export default StyleProvider;

@@ -1,7 +1,8 @@
 import { useEffect,useState,useRef}  from "react";
 import styles from './catalogo.module.scss'
-import {gsap} from "gsap";
 
+import Link from "next/dist/client/link";
+import {gsap} from "gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import {Typography} from '../../components/atoms/typography/typography.component'
@@ -88,15 +89,17 @@ export const Catalogo = () => {
             <div className={styles.catalogo}>
                 <div className={styles.catalogoGrid}>
                     {data.map((item,idx)=>
-                        <div className={styles.item} key={idx}>
-                            <img src={`src/assets/img/${item.img}`} alt="productos"/>
-                            <div className={styles.title}>
-                                <Typography variant="h4">{item.name.toUpperCase().slice(0,15)}</Typography>
-                            </div>
-                            <div className={styles.description}>
-                                <Typography>{item.description}</Typography>
-                            </div>
-                        </div>  
+                        <Link href="/producto/${idx}">
+                            <div className={styles.item} key={idx}>
+                                <img src={`src/assets/img/${item.img}`} alt="productos"/>
+                                <div className={styles.title}>
+                                    <Typography variant="h4">{item.name.toUpperCase().slice(0,15)}</Typography>
+                                </div>
+                                <div className={styles.description}>
+                                    <Typography>{item.description}</Typography>
+                                </div>
+                            </div>  
+                        </Link>
                     )}
                 </div>
             </div>

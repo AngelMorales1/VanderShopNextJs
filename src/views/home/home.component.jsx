@@ -1,16 +1,14 @@
 import { useRef, useEffect } from "react";
 import { Button } from "../../components/atoms/button/button.component";
+import Image from 'next/image'
 import styles from './home.module.scss'
 import clsx from 'clsx'
 
-/*import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
 
 //import { timeline } from "../../App";
-*/
+
 import { Typography } from "../../components/atoms/typography/typography.component";
 import {ProductTypeCard} from "../../components/molecules/productTypeCard/productTypeCard.component"
 import hombre from '../../assets/img/hombre.jpg';
@@ -29,10 +27,10 @@ export const HomePage = () => {
             timeline.from(boxRef.current, { x: "-300", opacity:"0"},"0.6")
                     .to(banner.current,{scale:1.1,duration:"2",repeat:"-1",yoyo:true})
         },[]);
-    
+        */
 
     SwiperCore.use([Navigation, Pagination]);
-    */
+
     return(
         <div>
             <div className={styles.banner} >
@@ -64,40 +62,40 @@ export const HomePage = () => {
                     </div>
                 </div>
                 
-                {/*
+                {
                 <div className={styles.novedades}>
                     <Typography variant="h1">NOVEDADES</Typography>
                     <div className="novedades-slider">
                         <Swiper
                             navigation= {{
                                 nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev'
+                                prevEl: '.swiper-button-prev',
                             }}
                             pagination= {{
                                 el: '.swiper-pagination',
                                 type: 'bullets',
                             }}
                             spaceBetween={5}
-                            slidesPerView={6}
+                            slidesPerView={5}
                             >
                             {data.map((item,idx)=>(
                                 <SwiperSlide className="swiper-slide" key={idx}>
                                    <div className="swiper-item">
-                                        <img c src={`/img/${item.img}`} alt="" />
+                                        <Image src={`/img/${item.img}`} alt="Novedades" width={500} height={500}/>
                                         <Typography variant="p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</Typography>
                                    </div>
                                 </SwiperSlide>
                             ))}
-                            <div className={clsx(styles.navigation,' swiper-button-next')}>
+                            <div className={clsx(styles.navigation,'swiper-button-next')}>
                                 <FontAwesomeIcon icon={faLongArrowAltRight}/>
                             </div>
-                            <div className={clsx(styles.navigation,' swiper-button-prev`')}>
+                            <div className={clsx(styles.navigation,'swiper-button-prev')}>
                                 <FontAwesomeIcon icon={faLongArrowAltLeft}/>
                             </div>
                         </Swiper>
                     </div>
                 </div>
-                */}
+                }
             </div>
         </div>
     )
