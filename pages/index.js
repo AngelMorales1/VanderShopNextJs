@@ -6,7 +6,7 @@ function Home(){
     return(
         <>
             <Head>
-                <title>Vander Shop</title>
+                <title>VanderShop</title>
             </Head>
             <Template>
                 <HomePage/>

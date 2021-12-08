@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './productTypeCard.module.scss';
 import clsx from "clsx";
 
-
 export const ProductTypeCard=({image,link,children,imgPosition})=>{
+
+ 
 
     const CardLink = ({children})=>{
         if (link) {

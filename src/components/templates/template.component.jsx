@@ -1,4 +1,4 @@
-import {Navbar} from '../organisms/navbar/navbar.component';
+import Navbar from '../organisms/navbar/navbar.component';
 import {Footer} from '../organisms/footer/footer.component';
 
 export const Template = ({children})=>{

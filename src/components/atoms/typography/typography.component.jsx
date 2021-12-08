@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import clsx from "clsx";
 
-export const Typography = ({variant,children,color,font})=>{
+export const Typography = ({variant,children,color,font,classProp})=>{
  /*
     Mapa para seleccionar la etiqueta a renderizar
   */
@@ -24,7 +25,7 @@ export const Typography = ({variant,children,color,font})=>{
     const Tag = Variants[variant]
 
     return(
-        <Tag className={variant} style={{color: color, fontFamily: font}}>
+        <Tag className={clsx(variant,classProp)} style={{color: color, fontFamily: font}}>
             {children}
         </Tag>
     )

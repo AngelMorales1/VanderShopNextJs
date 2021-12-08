@@ -1,16 +1,23 @@
 import { useEffect,useState,useRef}  from "react";
 import styles from './catalogo.module.scss'
 
-import Link from "next/dist/client/link";
+import Link from "next/link";
+import Image from 'next/image'
+import clsx from "clsx";
 import {gsap} from "gsap";
+import { motion } from "framer-motion"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import {Typography} from '../../components/atoms/typography/typography.component'
-import {data} from '../../assets/data/MOCK_DATA'
-import clsx from "clsx";
 
+import {data} from '../../assets/data/MOCK_DATA'
+
+import { useRouter } from "next/router"
 
 export const Catalogo = () => {
+
+    const {query} = useRouter()
 
     const [windowSize, setWindowSize] = useState(1920)
     const [dropDown,setDropDown] = useState(false)
@@ -26,8 +33,11 @@ export const Catalogo = () => {
             title: "Talle",
             values: ["L","M","S"]
         }]
-    /*
+
     useEffect(()=>{
+
+        setWindowSize(window.innerWidth)
+
         window.addEventListener('resize',()=>{
             setWindowSize(window.innerWidth)
         })
@@ -43,11 +53,11 @@ export const Catalogo = () => {
         }
         setDropDown(!dropDown)
     }
-    */
+
     return(
         <div className={clsx(styles.page,'container')}>
-            <div className="title">
-                <Typography variant="h1">Todos los productos de:</Typography>
+            <div className={styles.title}>
+                <Typography variant="h1">Todos los productos de: {query.categoria ? query.categoria.toUpperCase() : null }</Typography>
             </div>
 
             <div className={styles.sidebar}>
@@ -91,7 +101,11 @@ export const Catalogo = () => {
                     {data.map((item,idx)=>
                         <Link href="/producto/${idx}">
                             <div className={styles.item} key={idx}>
-                                <img src={`src/assets/img/${item.img}`} alt="productos"/>
+                                <motion.div whileHover={{
+                                    scale:0.9
+                                }}>
+                                    <Image src={`/img/${item.img}`} alt="productos" width={500} height={500}/>
+                                </motion.div>
                                 <div className={styles.title}>
                                     <Typography variant="h4">{item.name.toUpperCase().slice(0,15)}</Typography>
                                 </div>

@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Link from "next/link";
 import styles from './navbar.module.scss'
-import { useStyleContext } from "../../../store/styleContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch,faShoppingBag,faBolt,faSignInAlt,faMoon,faSun } from '@fortawesome/free-solid-svg-icons'
 import { Typography } from '../../atoms/typography/typography.component';
 
-export const Navbar = ()=>{
-    
-    const [themeIcon, setThemeIcon] = useState(true)
-    const toggleTheme = useStyleContext();
+import { globalContext } from "../../../store/store";
+
+const Navbar = ()=>{
+   
+    const {dispatch} = useContext(globalContext)
+
+    const [THEME, setTHEME] = useState(true)
 
     const changeCurrentTheme= ()=>{
-        toggleTheme(themeIcon)
-        setThemeIcon(!themeIcon)
+        dispatch({type:'TOGGLE_THEME' ,theme: THEME})
+        setTHEME(!THEME)
     }
 
     return(
@@ -34,13 +36,16 @@ export const Navbar = ()=>{
                         <Typography variant="h3">Login</Typography>
                     </a>
                 </Link>
-               {themeIcon?
+                {THEME ?
                     <FontAwesomeIcon className={styles.shopping} icon={faMoon} onClick={()=>changeCurrentTheme()}/>
                     :
-                    <FontAwesomeIcon className={styles.shopping} icon={faSun} onClick={()=>changeCurrentTheme()}/>
-               }
+                    <FontAwesomeIcon className={styles.shopping} icon={faSun} onClick={()=>changeCurrentTheme()}/>   
+                }
             </div>
         </div>
 
     )
 }
+
+
+export default (Navbar)

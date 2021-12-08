@@ -1,0 +1,11 @@
+.prodContainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row: 1fr;
+    .descriptionProd{
+        padding: 30px 15px;
+        .price{
+            font-size: 55px !important;
+        }
+    }
+}
